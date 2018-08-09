@@ -102,7 +102,7 @@
             // 
             this.deletebutton2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.deletebutton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.deletebutton2.Location = new System.Drawing.Point(539, 380);
+            this.deletebutton2.Location = new System.Drawing.Point(529, 380);
             this.deletebutton2.Name = "deletebutton2";
             this.deletebutton2.Size = new System.Drawing.Size(96, 34);
             this.deletebutton2.TabIndex = 6;
