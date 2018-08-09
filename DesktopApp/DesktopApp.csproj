@@ -105,6 +105,12 @@
     <Compile Include="Manage Inventory.Designer.cs">
       <DependentUpon>Manage Inventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manage User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage User.Designer.cs">
+      <DependentUpon>Manage User.cs</DependentUpon>
+    </Compile>
     <Compile Include="Orders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manage Inventory.resx">
       <DependentUpon>Manage Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage User.resx">
+      <DependentUpon>Manage User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>

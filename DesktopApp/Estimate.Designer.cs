@@ -251,9 +251,9 @@
             this.label4.Location = new System.Drawing.Point(41, 470);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 17);
+            this.label4.Size = new System.Drawing.Size(122, 17);
             this.label4.TabIndex = 30;
-            this.label4.Text = "\"ASK GIBBS\"";
+            this.label4.Text = "EXCHANGE RATE";
             // 
             // abtextBox
             // 

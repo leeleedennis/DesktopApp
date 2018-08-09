@@ -182,5 +182,13 @@ namespace DesktopApp
         {
             Application.Exit();
         }
+
+        private void manageUserToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Manage_User manage = new Manage_User();
+            manage.MdiParent = this;
+            manage.Show();
+            manage.Location = new Point(0, 0);
+        }
     }
 }

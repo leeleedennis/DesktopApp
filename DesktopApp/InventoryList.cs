@@ -29,7 +29,7 @@ namespace DesktopApp
             this.ItemDesciptextBox.Text = "";
             this.PrefVendortextBox.Text = "";
             this.MinReordertextBox.Text = "";
-            this.maxReorderLbl.Text = "";
+            this.MaxReordertextBox.Text = "";
             this.QOAtextBox.Text = "";
             this.QOHtextBox.Text = "";
             this.QOOtextBox.Text = "";
