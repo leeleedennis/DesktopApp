@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="InventoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Inventory List">
+          <Key>
+            <PropertyRef Name="Item_id" />
+          </Key>
+          <Property Name="Item_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item_Code" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Invent_Type" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Item_Description" Type="varchar" MaxLength="30" />
+          <Property Name="Pref_Vendor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Reorder_Point_Min" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Reorder_Point_Max" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Quantity_on_Hand" Type="varchar" MaxLength="20" />
+          <Property Name="Quantity_on_Order" Type="varchar" MaxLength="20" />
+          <Property Name="Quantity_on_Available" Type="varchar" MaxLength="20" />
+          <Property Name="Mark_up_Level" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Cost" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Measurement">
+          <Key>
+            <PropertyRef Name="UnitId" />
+          </Key>
+          <Property Name="UnitId" Type="int" Nullable="false" />
+          <Property Name="UnitMeasure" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="UnitId" Type="int" />
+          <Property Name="Rate" Type="varchar" MaxLength="20" />
+          <Property Name="Customer" Type="varchar" MaxLength="50" />
+          <Property Name="Amount" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="L_Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="20" />
+          <Property Name="Date_Created" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Function Name="Updateinventory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Itemid" Type="int" Mode="In" />
+          <Parameter Name="ItemCode" Type="varchar" Mode="In" />
+          <Parameter Name="InventType" Type="varchar" Mode="In" />
+          <Parameter Name="ItemDescription" Type="varchar" Mode="In" />
+          <Parameter Name="PrefVendor" Type="varchar" Mode="In" />
+          <Parameter Name="ReorderPointMin" Type="varchar" Mode="In" />
+          <Parameter Name="ReorderPointMax" Type="varchar" Mode="In" />
+          <Parameter Name="QuantityonHand" Type="varchar" Mode="In" />
+          <Parameter Name="QuantityonOrder" Type="varchar" Mode="In" />
+          <Parameter Name="QuantityonAvailable" Type="varchar" Mode="In" />
+          <Parameter Name="MarkupLevel" Type="varchar" Mode="In" />
+          <Parameter Name="Cost" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="InventoryModelStoreContainer">
+          <EntitySet Name="Inventory List" EntityType="Self.Inventory List" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Measurement" EntityType="Self.Measurement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InventoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Inventory_List">
+          <Key>
+            <PropertyRef Name="Item_id" />
+          </Key>
+          <Property Name="Item_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Item_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Invent_Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pref_Vendor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Reorder_Point_Min" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Reorder_Point_Max" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Quantity_on_Hand" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Quantity_on_Order" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Quantity_on_Available" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Mark_up_Level" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cost" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Item_Description" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="L_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Date_Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="InventoryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Inventory_Lists" EntityType="Self.Inventory_List" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Orders" EntityType="InventoryModel.Order" />
+          <EntitySet Name="Measurements" EntityType="InventoryModel.Measurement" />
+          <FunctionImport Name="Updateinventory">
+            <Parameter Name="Itemid" Mode="In" Type="Int32" />
+            <Parameter Name="ItemCode" Mode="In" Type="String" />
+            <Parameter Name="InventType" Mode="In" Type="String" />
+            <Parameter Name="ItemDescription" Mode="In" Type="String" />
+            <Parameter Name="PrefVendor" Mode="In" Type="String" />
+            <Parameter Name="ReorderPointMin" Mode="In" Type="String" />
+            <Parameter Name="ReorderPointMax" Mode="In" Type="String" />
+            <Parameter Name="QuantityonHand" Mode="In" Type="String" />
+            <Parameter Name="QuantityonOrder" Mode="In" Type="String" />
+            <Parameter Name="QuantityonAvailable" Mode="In" Type="String" />
+            <Parameter Name="MarkupLevel" Mode="In" Type="String" />
+            <Parameter Name="Cost" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="UnitId" Type="Int32" />
+          <Property Name="Rate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Customer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Measurement">
+          <Key>
+            <PropertyRef Name="UnitId" />
+          </Key>
+          <Property Name="UnitId" Type="Int32" Nullable="false" />
+          <Property Name="UnitMeasure" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="InventoryModelStoreContainer" CdmEntityContainer="InventoryEntities">
+          <EntitySetMapping Name="Inventory_Lists">
+            <EntityTypeMapping TypeName="InventoryModel.Inventory_List">
+              <MappingFragment StoreEntitySet="Inventory List">
+                <ScalarProperty Name="Item_Description" ColumnName="Item_Description" />
+                <ScalarProperty Name="Item_id" ColumnName="Item_id" />
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="Invent_Type" ColumnName="Invent_Type" />
+                <ScalarProperty Name="Pref_Vendor" ColumnName="Pref_Vendor" />
+                <ScalarProperty Name="Reorder_Point_Min" ColumnName="Reorder_Point_Min" />
+                <ScalarProperty Name="Reorder_Point_Max" ColumnName="Reorder_Point_Max" />
+                <ScalarProperty Name="Quantity_on_Hand" ColumnName="Quantity_on_Hand" />
+                <ScalarProperty Name="Quantity_on_Order" ColumnName="Quantity_on_Order" />
+                <ScalarProperty Name="Quantity_on_Available" ColumnName="Quantity_on_Available" />
+                <ScalarProperty Name="Mark_up_Level" ColumnName="Mark_up_Level" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="InventoryModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="F_Name" ColumnName="F_Name" />
+                <ScalarProperty Name="L_Name" ColumnName="L_Name" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Date_Created" ColumnName="Date_Created" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="InventoryModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Measurements">
+            <EntityTypeMapping TypeName="InventoryModel.Measurement">
+              <MappingFragment StoreEntitySet="Measurement">
+                <ScalarProperty Name="UnitMeasure" ColumnName="UnitMeasure" />
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Updateinventory" FunctionName="InventoryModel.Store.Updateinventory" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

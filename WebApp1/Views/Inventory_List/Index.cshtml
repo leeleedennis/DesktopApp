@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WebApp1.Models.Inventory_List>
+
+@{
+    ViewBag.Title = "Inventory";
+}
+
+<h2>Inventory</h2>
+
+<p>
+    @Html.ActionLink("Add new Item", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Item Code
+        </th>
+        <th>
+            Item Type
+        </th>
+        <th>
+            Item Description
+        </th>
+        <th>
+            Preferred Vendor
+        </th>
+        <th>
+            Minimum Reorder Point
+        </th>
+        <th>
+            Maximum Reorder Point
+        </th>
+        <th>
+            Quantity on Hand
+        </th>
+        <th>
+            Quantity on Order
+        </th>
+        <th>
+            Quantity Available
+        </th>
+        <th>
+            Mark-Up Level
+        </th>
+        <th>
+            Cost(JA$)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Invent_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item_Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pref_Vendor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reorder_Point_Min)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reorder_Point_Max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity_on_Hand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity_on_Order)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity_on_Available)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mark_up_Level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Item_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Item_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Item_id })
+        </td>
+    </tr>
+}
+
+</table>

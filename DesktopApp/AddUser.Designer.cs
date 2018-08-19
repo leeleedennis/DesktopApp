@@ -115,6 +115,7 @@
             this.PasswordTb.Location = new System.Drawing.Point(221, 267);
             this.PasswordTb.Multiline = true;
             this.PasswordTb.Name = "PasswordTb";
+            this.PasswordTb.PasswordChar = '*';
             this.PasswordTb.Size = new System.Drawing.Size(196, 24);
             this.PasswordTb.TabIndex = 4;
             // 
@@ -145,6 +146,7 @@
             this.ConfirmtextBox.Location = new System.Drawing.Point(221, 307);
             this.ConfirmtextBox.Multiline = true;
             this.ConfirmtextBox.Name = "ConfirmtextBox";
+            this.ConfirmtextBox.PasswordChar = '*';
             this.ConfirmtextBox.Size = new System.Drawing.Size(196, 24);
             this.ConfirmtextBox.TabIndex = 5;
             // 
@@ -186,6 +188,7 @@
             this.AcceptButton = this.createbtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(490, 492);

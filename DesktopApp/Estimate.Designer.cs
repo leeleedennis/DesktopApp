@@ -196,6 +196,7 @@
             // 
             this.subtextBox.Location = new System.Drawing.Point(864, 505);
             this.subtextBox.Name = "subtextBox";
+            this.subtextBox.ReadOnly = true;
             this.subtextBox.Size = new System.Drawing.Size(104, 20);
             this.subtextBox.TabIndex = 22;
             // 
@@ -203,6 +204,7 @@
             // 
             this.tttextBox.Location = new System.Drawing.Point(864, 583);
             this.tttextBox.Name = "tttextBox";
+            this.tttextBox.ReadOnly = true;
             this.tttextBox.Size = new System.Drawing.Size(104, 20);
             this.tttextBox.TabIndex = 23;
             // 
@@ -210,6 +212,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(864, 557);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(104, 20);
             this.textBox3.TabIndex = 24;
             // 
@@ -251,22 +254,23 @@
             this.label4.Location = new System.Drawing.Point(41, 470);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 17);
+            this.label4.Size = new System.Drawing.Size(164, 17);
             this.label4.TabIndex = 30;
-            this.label4.Text = "EXCHANGE RATE";
+            this.label4.Text = "EXCHANGE RATE 1 USD";
             // 
             // abtextBox
             // 
-            this.abtextBox.Location = new System.Drawing.Point(174, 470);
+            this.abtextBox.Location = new System.Drawing.Point(209, 470);
             this.abtextBox.Name = "abtextBox";
             this.abtextBox.Size = new System.Drawing.Size(104, 20);
             this.abtextBox.TabIndex = 31;
+            this.abtextBox.Text = "$135.00";
             // 
             // textBox6
             // 
             this.textBox6.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(275, 470);
+            this.textBox6.Location = new System.Drawing.Point(310, 470);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(42, 20);
             this.textBox6.TabIndex = 32;
@@ -277,7 +281,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(41, 530);
+            this.label5.Location = new System.Drawing.Point(76, 530);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(152, 17);
@@ -286,7 +290,7 @@
             // 
             // custextBox
             // 
-            this.custextBox.Location = new System.Drawing.Point(43, 550);
+            this.custextBox.Location = new System.Drawing.Point(78, 550);
             this.custextBox.Multiline = true;
             this.custextBox.Name = "custextBox";
             this.custextBox.Size = new System.Drawing.Size(281, 91);
@@ -333,6 +337,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1012, 749);
             this.Controls.Add(this.dataGridView1);

@@ -12,6 +12,7 @@ namespace DesktopApp
 {
     public partial class ResetPassword : Form
     {
+        InventoryEntities ctx = new InventoryEntities();
         public ResetPassword()
         {
             InitializeComponent();
@@ -25,14 +26,41 @@ namespace DesktopApp
         
         private void updatebtn_Click(object sender, EventArgs e)
         {
-            if (this.newPassTb.Text == this.confirmPassTb.Text && newPassTb.TextLength >= 8)
+            var username_value = usernametB.Text;
+            var oldpass_value = OldPassTb.Text;
+            var newpass_value = newPassTb.Text;
+            var confirm_value = confirmPassTb.Text;
+
+            oldpass_value = EasyEncryption.SHA.ComputeSHA256Hash(oldpass_value);
+            newpass_value = EasyEncryption.SHA.ComputeSHA256Hash(newpass_value);
+            confirm_value = EasyEncryption.SHA.ComputeSHA256Hash(confirm_value);
+
+            if (username_value == null)
             {
-                MessageBox.Show("Password change successful");
-                this.Close();
+                MessageBox.Show("Username field is empty");
             }
             else
             {
-                MessageBox.Show("Password does not match");
+                var u = ctx.Users.FirstOrDefault(q => q.Password == oldpass_value && q.Username == username_value);
+                if(u != null)
+                {
+                    try
+                    {
+                        u.Password = newpass_value;
+                        ctx.SaveChanges();
+                        MessageBox.Show("Password changed");
+                        this.Close();
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Username not found");
+                }
+                
 
             }
         }
@@ -43,6 +71,11 @@ namespace DesktopApp
 
             if (status == DialogResult.No)
                 e.Cancel = true;
+        }
+
+        private void confirmPassTb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

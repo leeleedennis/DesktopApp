@@ -6,13 +6,25 @@ namespace DesktopApp
 {
     public partial class Administrator : Form
     {
-        public bool verified = false;
+        InventoryEntities ctx = new InventoryEntities();
 
+        Login login = new Login();
+        public string accountName;
+        public bool verified = false;
+        
+       
         private int childFormNumber = 0;
 
         public Administrator()
         {
             InitializeComponent();
+        }
+
+        public bool isAuth = false;
+
+        private bool isAuthenticated()
+        {
+            return isAuth;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -183,12 +195,43 @@ namespace DesktopApp
             Application.Exit();
         }
 
+        private void fileMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Administrator_Load(object sender, EventArgs e)
+        {
+            //login.MdiParent = this;
+            //login.WindowState = FormWindowState.Maximized;
+            // login.Show();
+            
+                accountName = login.getUsername();
+                statusStrip1.Text = "Current User: " + accountName; 
+            
+            
+        }
+
+        private void stockReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Report report = new Report();
+            report.MdiParent = this;
+            report.Show();
+            report.Location = new Point(0, 0);
+        }
+
+        private void manageUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void manageUserToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Manage_User manage = new Manage_User();
+            ManageUser manage = new ManageUser();
             manage.MdiParent = this;
             manage.Show();
             manage.Location = new Point(0, 0);
         }
+
     }
 }

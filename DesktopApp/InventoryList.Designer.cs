@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryList));
             this.label1 = new System.Windows.Forms.Label();
             this.InventoryType = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.PrefVendorLbl = new System.Windows.Forms.Label();
             this.MarkUpLvlLbl = new System.Windows.Forms.Label();
             this.ItemtextBox = new System.Windows.Forms.TextBox();
+            this.bindingSourceInventory = new System.Windows.Forms.BindingSource(this.components);
             this.InvenTypetextBox = new System.Windows.Forms.TextBox();
             this.ItemDesciptextBox = new System.Windows.Forms.TextBox();
             this.MinReordertextBox = new System.Windows.Forms.TextBox();
@@ -54,6 +56,7 @@
             this.CosttextBox = new System.Windows.Forms.TextBox();
             this.Addbutton = new System.Windows.Forms.Button();
             this.Resetbutton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceInventory)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -189,6 +192,7 @@
             // 
             // ItemtextBox
             // 
+            this.ItemtextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceInventory, "Item_Code", true));
             this.ItemtextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemtextBox.Location = new System.Drawing.Point(239, 89);
             this.ItemtextBox.Multiline = true;
@@ -196,8 +200,13 @@
             this.ItemtextBox.Size = new System.Drawing.Size(300, 28);
             this.ItemtextBox.TabIndex = 1;
             // 
+            // bindingSourceInventory
+            // 
+            this.bindingSourceInventory.DataSource = typeof(DesktopApp.Inventory_List);
+            // 
             // InvenTypetextBox
             // 
+            this.InvenTypetextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceInventory, "Invent_Type", true));
             this.InvenTypetextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InvenTypetextBox.Location = new System.Drawing.Point(239, 142);
             this.InvenTypetextBox.Multiline = true;
@@ -207,6 +216,7 @@
             // 
             // ItemDesciptextBox
             // 
+            this.ItemDesciptextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceInventory, "Item_Description", true));
             this.ItemDesciptextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemDesciptextBox.Location = new System.Drawing.Point(239, 195);
             this.ItemDesciptextBox.Multiline = true;
@@ -216,6 +226,7 @@
             // 
             // MinReordertextBox
             // 
+            this.MinReordertextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceInventory, "Reorder_Point_Min", true));
             this.MinReordertextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinReordertextBox.Location = new System.Drawing.Point(239, 306);
             this.MinReordertextBox.Multiline = true;
@@ -225,6 +236,7 @@
             // 
             // QOAtextBox
             // 
+            this.QOAtextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceInventory, "Quantity_on_Available", true));
             this.QOAtextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QOAtextBox.Location = new System.Drawing.Point(239, 524);
             this.QOAtextBox.Multiline = true;
@@ -234,6 +246,7 @@
             // 
             // MaxReordertextBox
             // 
+            this.MaxReordertextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceInventory, "Reorder_Point_Max", true));
             this.MaxReordertextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaxReordertextBox.Location = new System.Drawing.Point(239, 362);
             this.MaxReordertextBox.Multiline = true;
@@ -243,6 +256,7 @@
             // 
             // MarkupLvltextBox
             // 
+            this.MarkupLvltextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceInventory, "Mark_up_Level", true));
             this.MarkupLvltextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MarkupLvltextBox.Location = new System.Drawing.Point(239, 580);
             this.MarkupLvltextBox.Multiline = true;
@@ -252,6 +266,7 @@
             // 
             // PrefVendortextBox
             // 
+            this.PrefVendortextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceInventory, "Pref_Vendor", true));
             this.PrefVendortextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrefVendortextBox.Location = new System.Drawing.Point(239, 252);
             this.PrefVendortextBox.Multiline = true;
@@ -261,6 +276,7 @@
             // 
             // QOOtextBox
             // 
+            this.QOOtextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceInventory, "Quantity_on_Order", true));
             this.QOOtextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QOOtextBox.Location = new System.Drawing.Point(239, 466);
             this.QOOtextBox.Multiline = true;
@@ -270,6 +286,7 @@
             // 
             // QOHtextBox
             // 
+            this.QOHtextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceInventory, "Quantity_on_Hand", true));
             this.QOHtextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QOHtextBox.Location = new System.Drawing.Point(239, 412);
             this.QOHtextBox.Multiline = true;
@@ -279,6 +296,7 @@
             // 
             // CosttextBox
             // 
+            this.CosttextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceInventory, "Cost", true));
             this.CosttextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CosttextBox.Location = new System.Drawing.Point(239, 629);
             this.CosttextBox.Multiline = true;
@@ -296,6 +314,7 @@
             this.Addbutton.TabIndex = 12;
             this.Addbutton.Text = "Add";
             this.Addbutton.UseVisualStyleBackColor = false;
+            this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
             // 
             // Resetbutton
             // 
@@ -314,6 +333,7 @@
             this.AcceptButton = this.Addbutton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(625, 749);
             this.Controls.Add(this.Resetbutton);
@@ -346,6 +366,7 @@
             this.Name = "InventoryList";
             this.Text = "Inventory List";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InventoryList_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,5 +399,6 @@
         private System.Windows.Forms.TextBox CosttextBox;
         private System.Windows.Forms.Button Addbutton;
         private System.Windows.Forms.Button Resetbutton;
+        private System.Windows.Forms.BindingSource bindingSourceInventory;
     }
 }

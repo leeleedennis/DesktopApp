@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Atlantic Electric - Contact Us</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--bootstrap css-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="custom.css" type="text/css">
+        <!--bootstrap JS, Popper.js, jquery-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <script language="Javascript">
+            function clicker(){
+            ss.innerHTML="<h5>message sent</h5>";
+            setTimeout("kk()",2000);
+            }
+            
+            function kk(){
+            document.forms[0].submit();
+            }
+            
+            </script>
+      </head>
+    <body class="container-fluid">
+            <!--navgigation bar-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-none">
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                      <ul class="navbar-nav">
+                          <li class="nav-item active">
+                            <a class="nav-link" href="about.html">About Us</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="product.html">Products</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="wires.html">Wire Chart</a>
+                            </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="http://localhost:53033/Users/Login">Login</a>
+                          </li>
+                      </ul>
+                    </div>
+                  </nav>
+                  <div class="container-fluid">
+                      <div id="pagebanner">
+                        <img class="banner" src="images/banner.jpg" alt="">
+                        <h1 class="bannertext">Contact Us</h1>
+                      </div>
+                      <!--main content-->
+                        <div id="contact" class="container content">
+                          <br>
+                            <div class="row">
+                              <div class="col">
+                                <h5>
+                                  Let's Talk Business!
+                                </h5>
+                                <form id="contactform" action="">
+                                  <input type="text" name="name" id="name" placeholder="Name"><br><br>
+                                  <input type="email" name="email" id="email" placeholder="E-mail"><br><br>
+                                  <textarea name="message" id="message" cols="30" rows="10" placeholder="How may we assist you?"></textarea><br><br>
+                                  <input type="file" name="attach" id="attach">
+                                  <label class="upload_label" for="attach"><span>Attach project details (RFP, RFO, RFT)</span></label><br>
+                                  <input type="button" name="submit1" value="Send Your Message" onClick="clicker()">
+                                  <div id="ss">
+                                    &nbsp
+                                  </div>
+                                </form>
+                                <br>
+                              </div>
+                              <div class="col">
+                                <h5>
+                                  Office Location
+                                </h5>
+                                <div class="row">
+                                <p class="bpm col">
+                                  <strong>
+                                  Address:
+                                  </strong>
+                                  138D Maxfield Avenue, Jamaica <br>
+                                  <strong>
+                                  Email:
+                                  </strong>
+                                  peter@atlanticjamaica.com<br>
+                                  <strong>
+                                  Phone:
+                                  </strong>
+                                  (876) 937-4545
+                                </p>
+                                </div>
+                                  <div id="map">
+                                  </div>
+                                      <script>
+                                        function myMap() {
+                                          var atlantic = {lat: 18.0058051, lng: -76.8002221};
+                                            var mapOptions = {
+                                                streetViewControl: true,
+                                                center: atlantic,
+                                                zoom: 18,
+                                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                                                
+                                            }
+                                            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                                            var marker = new google.maps.Marker({position: atlantic, map:map, title: 'Atlantic Industrial Electrical'});
+                                        }
+                                      </script>
+                                      <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                <!--footer-->
+                <div id="footer" class="container-fluid">
+                    <div id="tech" class="container">
+                      <br>
+                      <h3>Our Brands</h3>
+                      <div class="row">
+                        <div id="brands">
+                          <img src="images\our0brands (1).png" alt="">                              
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <div id="lastrow" class="row">
+                      <div class="col">
+                          <span>Copyright and Powered by POWERHOUSE © 2018 All Rights Reserved.</span>
+                      </div>
+                      <div id="socialmedia" class="col">
+                        <table id="social-icons">
+                          <tr>
+                            <td>
+                              <a href="http://www.facebook.com" target="_blank">
+                              <img class="icons" src="images/facebook.png"  alt="our Facebook"></a>
+                            </td>
+                            <td>
+                              <a href="https://www.linkedin.com" target="_blank">
+                              <img class="icons" src="images/linkedin.png" alt="our LinkedIn"></a>
+                            </td>
+                            <td>
+                              <a href="https://plus.google.com" target="_blank">
+                              <img class="icons" src="images/googleplus.png"  alt="our Google+ page"></a>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="col">
+                          <a href="#">Privacy Policy</a>
+                      </div>
+                    </div>
+                  </div>
+                 
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+    </body>
+</html>

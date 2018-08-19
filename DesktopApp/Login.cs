@@ -12,13 +12,26 @@ namespace DesktopApp
 {
     public partial class Login : Form
     {
+        InventoryEntities ctx = new InventoryEntities();
 
+        public String access;
+        
         public Login()
         {
             InitializeComponent();
         }
+        public string username_text;
+        private string username;
+        public void setUsername(string name)        
+        {
+            username = name;
+        }
+        public string getUsername()
+        {
+            return username;
+        }
 
-      
+
         private void forgetPasswordLbl_Click(object sender, EventArgs e)
         {
             ResetPassword reset = new ResetPassword();
@@ -29,10 +42,16 @@ namespace DesktopApp
         
         private void loginbutton_Click(object sender, EventArgs e)
         {
-            var username = "admin";
-            var password = "password";
+            //var username = "admin";
+            //var password = "password";
 
-            if (username == usernametb.Text && password == passwordtb.Text)
+           
+
+            username_text = usernametb.Text;
+            var password_text = passwordtb.Text;
+
+
+            /*if (username == usernametb.Text && password == passwordtb.Text)
             {
                 Administrator administrator = new Administrator();
                 administrator.Show();
@@ -45,8 +64,35 @@ namespace DesktopApp
                 this.usernametb.Text = "";
                 this.passwordtb.Text = "";
             }
+             */
+            password_text = EasyEncryption.SHA.ComputeSHA256Hash(password_text);
+
+            var IsAnyUser = ctx.Users.Any(q => q.Username == username_text && q.Password == password_text);
+
+
+            if (IsAnyUser)
+            {
+
+                // var parent = (Administrator)MdiParent;
+                 //parent.isAuth = true;
+
+                Administrator administrator = new Administrator();
+                administrator.Show();
+                this.Close();
+
+                
+
+                
+                
+
+            }
+            else
+            {
+                MessageBox.Show("Credentials provided are not valid");
+            }
+            
         }
 
-       
+
     }
 }

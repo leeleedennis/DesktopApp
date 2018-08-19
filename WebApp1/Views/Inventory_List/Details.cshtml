@@ -1,0 +1,106 @@
+﻿@model WebApp1.Models.Inventory_List
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Selected item information</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Item Code
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item_Code)
+        </dd>
+
+        <dt>
+            Item Type
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invent_Type)
+        </dd>
+
+        <dt>
+            Item Description
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item_Description)
+        </dd>
+
+        <dt>
+            Preferred Vendor
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pref_Vendor)
+        </dd>
+
+        <dt>
+            Min Reorder Point
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reorder_Point_Min)
+        </dd>
+
+        <dt>
+            Max Reorder Point
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reorder_Point_Max)
+        </dd>
+
+        <dt>
+            Quantity on Hand
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity_on_Hand)
+        </dd>
+
+        <dt>
+           Quantity on Order
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity_on_Order)
+        </dd>
+
+        <dt>
+            Quantity Available
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity_on_Available)
+        </dd>
+
+        <dt>
+            Mark-Up Level
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mark_up_Level)
+        </dd>
+
+        <dt>
+            Cost($JA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Item_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
