@@ -342,7 +342,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "Administrator";
-            this.Text = " Administrator";
+            this.Text = "Inventory Management System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Administrator_FormClosing);
             this.Load += new System.EventHandler(this.Administrator_Load);

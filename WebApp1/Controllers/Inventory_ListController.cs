@@ -123,17 +123,6 @@ namespace WebApp1.Controllers
             }
             base.Dispose(disposing);
         }
-
-        public ActionResult Welcome()
-        {
-            string userId = Session["Username"].ToString();
-            User user = db.Users.FirstOrDefault(q => q.Username == userId);
-            if(user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
-        }
     }
 
 }

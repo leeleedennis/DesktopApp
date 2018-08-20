@@ -139,7 +139,7 @@ namespace WebApp1.Controllers
             {
                 Session["Username"] = user.Username.ToString();
                 tempId = user.Username;
-                return RedirectToAction("Welcome", "Inventory_List");
+                return RedirectToAction("Welcome", "Welcome");
             }
             ModelState.AddModelError("", "Username or Password Incorrect");
             return View();

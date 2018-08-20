@@ -34,13 +34,13 @@ textarea {
 	padding: 0px;
 }
 
-.jumbotron {
+/*.jumbotron {
 	background-image: url('../Images/home-slide-9426.jpg');
 	background-size: auto;
 	color: white;
-}
+}*/
 
-h5, h2 {
+h5, h2, h1 {
 	color: cornflowerblue;
 }
 
@@ -83,4 +83,14 @@ h5, h2 {
 
 .form-control {
 	border: solid cornflowerblue 2px;
+}
+
+.background {
+	background-image: url('../Images/inside-warehouse-1591000.jpg');
+	background-size: cover;
+}
+
+
+.welcome {
+	text-align: center;
 }

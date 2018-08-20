@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Inventory_ListController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\WelcomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -211,6 +212,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\home-slide-9426.jpg" />
+    <Content Include="Images\inside-warehouse-1591000.jpg" />
     <Content Include="Images\logo.png" />
     <Content Include="Models\InventoryDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -269,7 +271,9 @@
     <Content Include="Views\Inventory_List\Index.cshtml" />
     <Content Include="Views\Shared\_Layout1.cshtml" />
     <Content Include="Views\Users\_ViewStart.cshtml" />
-    <Content Include="Views\Inventory_List\Welcome.cshtml" />
+    <Content Include="Views\Welcome\Welcome.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Welcome\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
