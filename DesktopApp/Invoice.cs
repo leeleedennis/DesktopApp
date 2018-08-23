@@ -196,7 +196,7 @@ namespace DesktopApp
             e.Graphics.DrawString(dash.Text, new System.Drawing.Font("Arial", 12), Brushes.Black, new Point(25, 170));
 
             e.Graphics.DrawString("Date: " + DateTime.Now, new System.Drawing.Font("Arial", 12), Brushes.Black, new Point(25, 235));
-            e.Graphics.DrawString("Customer: " + InvoiceGridView.Rows[i].Cells[5].FormattedValue.ToString(), InvoiceGridView.Font, Brushes.Black, new System.Drawing.Rectangle(25, 190, InvoiceGridView.Columns[1].Width, InvoiceGridView.Rows[0].Height));
+            e.Graphics.DrawString("Customer: " + InvoiceGridView.Rows[i].Cells[5].FormattedValue.ToString(), InvoiceGridView.Font, Brushes.Black, new System.Drawing.Rectangle(25, 195, InvoiceGridView.Columns[1].Width, InvoiceGridView.Rows[0].Height));
             e.Graphics.DrawString("13 Lincoln Avenue, Kingston 5", new System.Drawing.Font("Arial", 12), Brushes.Black, new Point(70, 210));
 
 

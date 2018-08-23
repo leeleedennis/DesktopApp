@@ -313,9 +313,9 @@
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
             "",
-            "16.5",
-            "18.5",
-            "20.0"});
+            ".165",
+            ".185",
+            ".2"});
             this.comboBox4.Location = new System.Drawing.Point(599, 535);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(112, 21);
@@ -369,7 +369,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(112, 16);
             this.label8.TabIndex = 75;
-            this.label8.Text = "(0.0%)         JMD";
+            this.label8.Text = "                   JMD";
             // 
             // baltextBox
             // 

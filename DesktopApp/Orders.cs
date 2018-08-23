@@ -41,15 +41,15 @@ namespace DesktopApp
 
         private void Searchbutton_Click(object sender, EventArgs e)
         {
-             OrderGridView.DataSource = ctx.Orders.ToList();
+            // OrderGridView.DataSource = ctx.Orders.ToList();
              SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-RLN6KED0\SQLEXPRESS;Initial Catalog=Inventory;Integrated Security=True");
              SqlDataAdapter sda = new SqlDataAdapter("Select Item, Description, Quantity, Rate, Customer, Amount From [Order]", con);
             // DataTable data = new DataTable();
              sda.Fill(data);
 
-             foreach(DataRow item in data.Rows)
+            foreach(DataRow item in data.Rows)
              {
-                 int n = OrderGridView.Rows.Add();
+                int n = OrderGridView.Rows.Add();
                  OrderGridView.Rows[n].Cells[0].Value = false;
                  OrderGridView.Rows[n].Cells[1].Value = item[0].ToString();
                  OrderGridView.Rows[n].Cells[2].Value = item[1].ToString();
@@ -64,11 +64,11 @@ namespace DesktopApp
             /* using (InventoryEntities ctx = new InventoryEntities())
              {
                  orderBindingSource.DataSource = ctx.Orders.ToList();
-             }*/
+             }
             void OrdersGridView()
             {
                 OrderGridView.DataSource = ctx.Orders.ToList<Order>();
-            }
+            }*/
 
         }
 
